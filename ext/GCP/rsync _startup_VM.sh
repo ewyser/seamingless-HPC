@@ -19,6 +19,12 @@ if ! command -v gsutil &>/dev/null; then
     exec -l $SHELL
 fi
 
+# Check if LOCAL_DIR exists, and create it if it does not
+if [ ! -d "$LOCAL_DIR" ]; then
+    echo "Directory $LOCAL_DIR does not exist. Creating it..."
+    mkdir -p "$LOCAL_DIR"
+fi
+
 # Sync the bucket with the local directory
 echo "Syncing Google Cloud Storage bucket $BUCKET_NAME to $LOCAL_DIR"
 gsutil -m rsync -r gs://$BUCKET_NAME $LOCAL_DIR
