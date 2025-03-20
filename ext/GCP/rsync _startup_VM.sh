@@ -28,3 +28,11 @@ fi
 # Sync the bucket with the local directory
 echo "Syncing Google Cloud Storage bucket $BUCKET_NAME to $LOCAL_DIR"
 gsutil -m rsync -r gs://$BUCKET_NAME $LOCAL_DIR
+
+echo "Loading Docker images..."
+for image in $LOCAL_DIR/*.tar; do
+    if [ -f "$image" ]; then  # Check if it's a file (not a directory)
+        echo "Loading image: $image"
+        sudo docker load -i "$image"
+    fi
+done
