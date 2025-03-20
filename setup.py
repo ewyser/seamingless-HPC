@@ -11,14 +11,14 @@ def parse_requirements(filename):
         return [line.strip() for line in f.readlines() if line.strip()]
 
 setup(
-    name='my-awesome-project',  # Name of the package
+    name='seamingless-smhpc',  # Name of the package
     version='0.1.0',            # Version number
-    description='An awesome project for GCP integration',  # Short description of the project
+    description='This is a python project to seaminglessly operate VMs on Google Cloud Service through Compute Engine',  # Short description of the project
     long_description=read('README.md'),  # Detailed description from README.md
     long_description_content_type='text/markdown',  # Content type of README (markdown)
-    author='Your Name',  # Your name
-    author_email='your.email@example.com',  # Your email
-    url='https://github.com/yourusername/my-awesome-project',  # URL of your project or repo
+    author='madMax',  # Your name
+    author_email='manuwyser@gmail.com',  # Your email
+    url='https://github.com/ewyser/seamingless-smhpc',  # URL of your project or repo
     packages=find_packages(where='src'),  # Find all packages under src
     package_dir={'': 'src'},  # Tell setuptools to look under 'src' for packages
     install_requires=parse_requirements('requirements.txt'),  # Dependencies from requirements.txt
