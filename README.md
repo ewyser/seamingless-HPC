@@ -1,1 +1,1 @@
-# EzAPI
+# $_{s}m^{H}$-PC made easy
