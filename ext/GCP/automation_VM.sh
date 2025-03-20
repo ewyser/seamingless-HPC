@@ -60,11 +60,11 @@ if [ -z "$CONTAINER_ID" ]; then
     exit 1
 fi
 
-# Optional: Execute a Julia command inside the running container
+# Execute a Julia command inside the running container
 echo "Executing Julia command inside the container..."
 docker exec -d "$CONTAINER_ID" julia --project=. -e 'using cORIUm; instr,ic = geoflow(10.0,5.0,512,5.0,1.0)'
 
-# Optional: Wait for the container to finish (if it's a long-running job)
+# Wait for the container to finish (if it's a long-running job)
 echo "Waiting for container $CONTAINER_ID to finish..."
 docker wait "$CONTAINER_ID"
 
