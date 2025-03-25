@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seaminglessHPC"
+version = "0.0.0"
+
+[project.scripts]
+greet = "seaminglessHPC.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
