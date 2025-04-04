@@ -1,4 +1,4 @@
-from seaminglessHPC import node
+from seamless_hpc import node
 
 def main():
     node.greet()
